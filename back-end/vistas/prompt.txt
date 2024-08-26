@@ -1,0 +1,9 @@
+generate a form for personal data registration, must have the following fileds nombres, apellido paterno, apellido materno, fecha nacimiento, direccion, telefono, celular. Finally must have 2 buttons grabar and cacelar
+
+
+generate a form for "registro de usuario", must have the following fileds usuario, contraseña (password), verificar contraseña (password). Finally must have 2 buttons grabar and cancelar
+
+generate a form for "Inscripcion a curso", must have the following fields:
+    Nombre Estudiante (read), Curso (read), Descripcion Curso, Costo, Modalidad pago
+    Tiempo, Instructor, materiales
+ Finally must have 2 buttons grabar and cancelar

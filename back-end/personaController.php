@@ -20,15 +20,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
         if(!isset($_POST->nombres) || is_null($_POST->nombres) || empty(trim($_POST->nombres)) || strlen($_POST->nombres) > 80){
             $respuesta = ['error', 'El nombre de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
-        else if(!isset($_POST->apellidos) || is_null($_POST->apellidos) || empty(trim($_POST->apellidos)) || strlen($_POST->apellidos) > 80){
+        else if(!isset($_POST->paterno) || is_null($_POST->paterno) || empty(trim($_POST->paterno)) || strlen($_POST->paterno) > 80){
             $respuesta = ['error', 'El apellido de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
         else {
             $respuesta = $personaModel->savePersona(
                 $_POST->nombres, 
-                $_POST->apellidos, 
+                $_POST->paterno, 
+                $_POST->materno, 
                 $_POST->direccion, 
                 $_POST->telefono, 
+                $_POST->mobile, 
                 $_POST->fecha_nacimiento, 
                 $_POST->id_usuario_reg, 
                 $_POST->id_profesion
@@ -45,16 +47,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
         else if(!isset($_PUT->nombres) || is_null($_PUT->nombres) || empty(trim($_PUT->nombres)) || strlen($_PUT->nombres) > 80){
             $respuesta = ['error', 'El nombre de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
-        else if(!isset($_PUT->apellidos) || is_null($_PUT->apellidos) || empty(trim($_PUT->apellidos)) || strlen($_PUT->apellidos) > 80){
+        else if(!isset($_PUT->paterno) || is_null($_PUT->paterno) || empty(trim($_PUT->paterno)) || strlen($_PUT->paterno) > 80){
             $respuesta = ['error', 'El apellido de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
         else {
             $respuesta = $personaModel->updatePersona(
                 $_PUT->id, 
                 $_PUT->nombres, 
-                $_PUT->apellidos, 
+                $_PUT->paterno, 
+                $_POST->materno, 
                 $_PUT->direccion, 
                 $_PUT->telefono, 
+                $_POST->mobile, 
                 $_PUT->fecha_nacimiento, 
                 $_PUT->id_user_mod, 
                 $_PUT->id_profesion

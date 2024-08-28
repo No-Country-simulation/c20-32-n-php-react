@@ -29,16 +29,19 @@
 
 <ul class="list">
     <li>
-        <a href="./persona.php">Persona</a><span>  registros</span>
+        <a href="./persona.php">Persona</a> 
     </li>
     <li>
-        <a href="/usuarios">Usuarios</a><span>  registros</span>
+        <a href="./usuario.php">Usuario</a> 
     </li>
     <li>
-        <a href="/users">Users</a><span>10 users</span>
+        <a href="./curso.php">Curso</a> 
     </li>
     <li>
-        <a href="/login">Login Token</a><span class="badge">New!</span>
+        <a href="./curso_estudiante.php">Cursos de estudiantes</a> 
+    </li>    
+    <li>
+        <a href="/curso_estudiante.php">Login Token</a><span class="badge">New!</span>
     </li>
 </ul>
 

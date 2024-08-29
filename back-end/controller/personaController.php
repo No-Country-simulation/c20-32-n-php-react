@@ -5,16 +5,27 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 header('content-type: application/json; charset=utf-8');
 
-require 'personaModel.php';
+require '../model/personaModel.php';
 
 $personaModel = new personaModel();
 
+ 
+
 switch ($_SERVER['REQUEST_METHOD']) {
+     
     case 'GET':
         $respuesta = (!isset($_GET['id'])) ? $personaModel->getPersonas() : $personaModel->getPersonas($_GET['id']);
         echo json_encode($respuesta);
     break;
-
+   /*
+    case 'GET':
+        if ($_SERVER['REQUEST_URI'] === '/persona') {
+            $respuesta = (!isset($_GET['id'])) ? $personaModel->getPersonas() : $personaModel->getPersonas($_GET['id']);
+            echo json_encode($respuesta);
+        }
+        // ... otros endpoints
+        break;    
+*/
     case 'POST':
         $_POST = json_decode(file_get_contents('php://input', true));
         if(!isset($_POST->nombres) || is_null($_POST->nombres) || empty(trim($_POST->nombres)) || strlen($_POST->nombres) > 80){

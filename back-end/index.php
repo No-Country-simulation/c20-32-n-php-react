@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recursos</title>
+    <title>Api Restful Cursoteka</title>
     <style>
         .heading {
             font-size: 24px;
@@ -25,23 +25,23 @@
 </head>
 <body>
 
-<h2 class="heading">Recursos</h2>
+<h2 class="heading">Api Restful Cursoteka</h2>
 
 <ul class="list">
     <li>
-        <a href="./persona.php">Persona</a> 
+       GET <a href="./persona/">Persona</a> 
     </li>
     <li>
-        <a href="./usuario.php">Usuario</a> 
+    GET <a href="./usuario/">Usuario</a> 
     </li>
     <li>
-        <a href="./curso.php">Curso</a> 
+    GET <a href="./curso/">Curso</a> 
     </li>
     <li>
-        <a href="./curso_estudiante.php">Cursos de estudiantes</a> 
+    GET <a href="./curso_estudiante/">Cursos de estudiantes</a> 
     </li>    
     <li>
-        <a href="/curso_estudiante.php">Login Token</a><span class="badge">New!</span>
+    GET <a href="./curso_recurso/">Recursos de curso</a><span class="badge">New!</span>
     </li>
 </ul>
 

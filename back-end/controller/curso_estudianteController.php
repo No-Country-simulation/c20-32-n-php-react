@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 header('content-type: application/json; charset=utf-8');
 
-require 'Estudiante_CursoModel.php';
+require '../model/Estudiante_CursoModel.php';
 
 $estudianteCursoModel = new EstudianteCursoModel();
 

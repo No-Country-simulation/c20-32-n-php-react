@@ -29,19 +29,19 @@
 
 <ul class="list">
     <li>
-       GET <a href="./persona/">Persona</a> 
+       GET <a href="./api/persona/">Persona</a> 
     </li>
     <li>
-    GET <a href="./usuario/">Usuario</a> 
+    GET <a href="./api/usuario/">Usuario</a> 
     </li>
     <li>
-    GET <a href="./curso/">Curso</a> 
+    GET <a href="./api/curso/">Curso</a> 
     </li>
     <li>
-    GET <a href="./curso_estudiante/">Cursos de estudiantes</a> 
+    GET <a href="./api/curso_estudiante/">Cursos de estudiantes</a> 
     </li>    
     <li>
-    GET <a href="./curso_recurso/">Recursos de curso</a><span class="badge">New!</span>
+    GET <a href="./api/curso_recurso/">Recursos de curso</a><span class="badge">New!</span>
     </li>
 </ul>
 

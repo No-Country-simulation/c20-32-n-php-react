@@ -1,10 +1,13 @@
 <?php
+
+require_once '../../config/db.php';
+
 class usuarioModel {
-    public $conexion;
+    private $conexion;
     
     public function __construct() {
-        $this->conexion = new mysqli('localhost', 'root', 'Pers.1987$', 'elearning');
-        mysqli_set_charset($this->conexion, 'utf8');
+        $db = new Database();
+        $this->conexion = $db->getConnection();
     }
 
     // Método para obtener usuarios, con o sin filtro por ID

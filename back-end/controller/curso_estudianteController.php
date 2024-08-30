@@ -10,10 +10,12 @@ require '../../model/Estudiante_CursoModel.php';
 $estudianteCursoModel = new EstudianteCursoModel();
 
 switch ($_SERVER['REQUEST_METHOD']) {
+
    case 'GET':
-      $respuesta = (!isset($_GET['id'])) ? $estudianteCursoModel->getEstudianteCursos() : $estudianteCursoModel->getEstudianteCursos($_GET['id']);
+      $id = isset($_GET['id']) ? $_GET['id'] : null;        
+      $respuesta = $estudianteCursoModel->getEstudianteCursos($id);
       echo json_encode($respuesta);
-   break;
+      break;     
 
    case 'POST':
       $_POST = json_decode(file_get_contents('php://input', true));
@@ -59,6 +61,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       echo json_encode($respuesta);
    break;
 
+   /*
    case 'DELETE':
       $_DELETE = json_decode(file_get_contents('php://input', true));
       if(!isset($_DELETE->id) || is_null($_DELETE->id) || empty(trim($_DELETE->id))){
@@ -69,5 +72,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
+   */
+  case 'DELETE':
+   // Extraer el ID de la URL
+   $id = isset($_GET['id']) ? $_GET['id'] : null;
+   if(is_null($id) || empty(trim($id))){
+       $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
+   }
+   else {
+       $respuesta = $estudianteCursoModel->deleteEstudianteCurso($id);
+   }
+   echo json_encode($respuesta);
+break;   
 }
 ?>

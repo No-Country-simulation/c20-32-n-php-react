@@ -9,23 +9,14 @@ require '../../model/personaModel.php';
 
 $personaModel = new personaModel();
 
- 
-
 switch ($_SERVER['REQUEST_METHOD']) {
      
     case 'GET':
-        $respuesta = (!isset($_GET['id'])) ? $personaModel->getPersonas() : $personaModel->getPersonas($_GET['id']);
+        $id = isset($_GET['id']) ? $_GET['id'] : null;        
+        $respuesta = $personaModel->getPersonas($id);
         echo json_encode($respuesta);
-    break;
-   /*
-    case 'GET':
-        if ($_SERVER['REQUEST_URI'] === '/persona') {
-            $respuesta = (!isset($_GET['id'])) ? $personaModel->getPersonas() : $personaModel->getPersonas($_GET['id']);
-            echo json_encode($respuesta);
-        }
-        // ... otros endpoints
-        break;    
-*/
+        break;   
+   
     case 'POST':
         $_POST = json_decode(file_get_contents('php://input', true));
         if(!isset($_POST->nombres) || is_null($_POST->nombres) || empty(trim($_POST->nombres)) || strlen($_POST->nombres) > 80){
@@ -49,43 +40,87 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         echo json_encode($respuesta);
     break;
-
+ 
     case 'PUT':
-        $_PUT = json_decode(file_get_contents('php://input', true));
-        if(!isset($_PUT->id) || is_null($_PUT->id) || empty(trim($_PUT->id))){
+        // Extraer el ID de la URL
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+
+        // Obtener y decodificar los datos de la solicitud PUT
+        $putData = json_decode(file_get_contents('php://input'), true);
+
+        /*
+        echo '<pre>';
+        print_r($putData);
+        echo '</pre>';
+        */        
+
+        //echo   "val: ".$putData['nombres'];
+
+        if(is_null($id) || empty(trim($id))){
             $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
         }
-        else if(!isset($_PUT->nombres) || is_null($_PUT->nombres) || empty(trim($_PUT->nombres)) || strlen($_PUT->nombres) > 80){
+        else if(!isset($putData['nombres']) || is_null($putData['nombres']) || empty(trim($putData['nombres'])) || strlen($putData['nombres']) > 80){
             $respuesta = ['error', 'El nombre de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
-        else if(!isset($_PUT->paterno) || is_null($_PUT->paterno) || empty(trim($_PUT->paterno)) || strlen($_PUT->paterno) > 80){
-            $respuesta = ['error', 'El apellido de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
+        else if(!isset($putData['paterno']) || is_null($putData['paterno']) || empty(trim($putData['paterno'])) || strlen($putData['paterno']) > 80){
+            $respuesta = ['error', 'El apellido paterno de la persona no debe estar vacío y no debe tener más de 80 caracteres'];
         }
         else {
+     
             $respuesta = $personaModel->updatePersona(
-                $_PUT->id, 
-                $_PUT->nombres, 
-                $_PUT->paterno, 
-                $_POST->materno, 
-                $_PUT->direccion, 
-                $_PUT->telefono, 
-                $_POST->mobile, 
-                $_PUT->fecha_nacimiento, 
-                $_PUT->id_user_mod, 
-                $_PUT->id_profesion
+                $id, 
+                $putData['nombres'], 
+                $putData['paterno'], 
+                isset($putData['materno']) ? $putData['materno'] : null, 
+                isset($putData['direccion']) ? $putData['direccion'] : null, 
+                isset($putData['telefono']) ? $putData['telefono'] : null, 
+                isset($putData['mobile']) ? $putData['mobile'] : null, 
+                isset($putData['fecha_nacimiento']) ? $putData['fecha_nacimiento'] : null, 
+                isset($putData['id_user_mod']) ? $putData['id_user_mod'] : null, 
+                isset($putData['id_profesion']) ? $putData['id_profesion'] : null
             );
         }
         echo json_encode($respuesta);
     break;
 
+     
+
+    /*
+    caso de enviar en postaman 
+    Opción 2: Enviar el ID en el cuerpo del JSON
+    Si prefieres mantener el ID en el cuerpo de la solicitud (como se hace con POST y PUT), debes asegurarte de que el ID se esté enviando correctamente en el cuerpo de la solicitud cuando utilices el método DELETE. Aquí te muestro cómo debería lucir tu solicitud en Postman:
+
+    Selecciona el método DELETE.
+    Ve a la pestaña Body.
+    Selecciona la opción raw y luego JSON.
+    Ingresa el siguiente JSON en el cuerpo:
+    json
+    Copiar código
+    {
+        "id": 17
+    }
+    Esta segunda opción no requiere cambios en tu código actual, pero te obliga a enviar el ID como parte del cuerpo de la solicitud.    
+
     case 'DELETE':
         $_DELETE = json_decode(file_get_contents('php://input', true));
         if(!isset($_DELETE->id) || is_null($_DELETE->id) || empty(trim($_DELETE->id))){
-            $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
+            $respuesta = ['error', 'El ID de la persona no debe estar vacío '];
         }
         else {
             $respuesta = $personaModel->deletePersona($_DELETE->id);
         }
         echo json_encode($respuesta);
     break;
+    */
+    case 'DELETE':
+        // Extraer el ID de la URL
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        if(is_null($id) || empty(trim($id))){
+            $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
+        }
+        else {
+            $respuesta = $personaModel->deletePersona($id);
+        }
+        echo json_encode($respuesta);
+    break;    
 }

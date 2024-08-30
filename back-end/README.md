@@ -14,6 +14,10 @@ Paso 3: Modificar los parametros de conexxion en el archivo ./config/db.php a la
 
 Paso 4: Visualizar en tu servidor la API, (http://localhost/c20-32-n-php-react/back-end/) o el host virutal asignado
 
+Paso 5: actualizar el archivo .htaccess con la ruta correspondiente ej. en persona deberia contener lo siguiente
+
+RewriteBase /c20-32-n-php-react/back-end/api/persona/
+
 (C) 2024 
 
 Damián Esteves

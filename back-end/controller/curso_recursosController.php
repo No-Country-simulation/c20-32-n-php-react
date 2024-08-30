@@ -10,10 +10,12 @@ require '../../model/curso_recusosModel.php';
 $cursoRecursosModel = new cursoRecursosModel();
 
 switch ($_SERVER['REQUEST_METHOD']) {
+ 
    case 'GET':
-      $respuesta = (!isset($_GET['id'])) ? $cursoRecursosModel->getRecursos() : $cursoRecursosModel->getRecursos($_GET['id']);
+      $id = isset($_GET['id']) ? $_GET['id'] : null;        
+      $respuesta = $cursoRecursosModel->getRecursos($id);
       echo json_encode($respuesta);
-   break;
+      break;     
 
    case 'POST':
       $_POST = json_decode(file_get_contents('php://input', true));
@@ -49,6 +51,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
+   /*
 
    case 'DELETE':
       $_DELETE = json_decode(file_get_contents('php://input', true));
@@ -60,5 +63,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
+   */
+  case 'DELETE':
+   // Extraer el ID de la URL
+   $id = isset($_GET['id']) ? $_GET['id'] : null;
+   if(is_null($id) || empty(trim($id))){
+       $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
+   }
+   else {
+       $respuesta = $cursoRecursosModel->deleteRecurso($id);
+   }
+   echo json_encode($respuesta);
+   break;   
 }
 ?>

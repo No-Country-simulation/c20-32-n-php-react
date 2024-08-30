@@ -26,8 +26,10 @@ class usuarioModel {
 
     // Método para guardar un nuevo usuario
     public function saveUsuario($nombre_usuario, $email, $password, $id_persona, $id_usuario_reg,$rol) {
-        $sql = "INSERT INTO usuario (nombre_usuario, email, password, id_persona, id_usuario_reg) 
-                VALUES ('$nombre_usuario', '$email', '$password', '$id_persona', '$id_usuario_reg','$rol')";
+        
+        $sql = "INSERT INTO usuario (nombre_usuario, email, password, id_persona, id_usuario_reg,rol) 
+                VALUES ('$nombre_usuario', '$email', '$password', $id_persona, $id_usuario_reg,'$rol')";
+        //echo "q: $sql";
         mysqli_query($this->conexion, $sql);
         
         return ['success', 'Usuario guardado'];
@@ -39,8 +41,9 @@ class usuarioModel {
         if (count($existe) > 0) {
             $sql = "UPDATE usuario 
                     SET nombre_usuario='$nombre_usuario', email='$email', password='$password', 
-                        id_persona='$id_persona', id_user_mod='$id_user_mod' ,rol=$rol
-                    WHERE id_usuario='$id'";
+                        id_persona=$id_persona, id_user_mod=$id_user_mod ,rol='$rol'
+                    WHERE id_usuario=$id";
+            //echo "query $sql";
             mysqli_query($this->conexion, $sql);
             return ['success', 'Usuario actualizado'];
         } else {

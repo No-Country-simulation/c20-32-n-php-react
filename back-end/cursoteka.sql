@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `id_persona` bigint NOT NULL AUTO_INCREMENT,
   `nombres` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
   `paterno` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '',
-  `materno` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `materno` VARCHAR(80) NULL DEFAULT NULL COLLATE 'utf8mb4_spanish_ci',  
   `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
   `telefono` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `mobile` varchar(15) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -49,20 +49,24 @@ INSERT INTO `persona` ( `nombres`, `paterno`, `materno`, `direccion`, `telefono`
 -- Volcando estructura para tabla elearning.usuario
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_usuario` bigint NOT NULL AUTO_INCREMENT,
-  `nombre_usuario` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fecha_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_persona` bigint DEFAULT NULL,
-  `id_usuario_reg` bigint DEFAULT NULL,
-  `fecha_mod` timestamp NULL DEFAULT (NULL),
-  `id_user_mod` bigint DEFAULT NULL,
-  `rol` enum('estudiante','instructor','administrador') COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'estudiante',
-  PRIMARY KEY (`id_usuario`) USING BTREE,
-  KEY `id_persona` (`id_persona`),
-  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+	`id_usuario` BIGINT NOT NULL AUTO_INCREMENT,
+	`nombre_usuario` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	`email` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	`password` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'utf8mb4_spanish_ci',
+	`fecha_registro` TIMESTAMP NULL DEFAULT (CURRENT_TIMESTAMP),
+	`id_persona` BIGINT NULL DEFAULT NULL,
+	`id_usuario_reg` BIGINT NULL DEFAULT NULL,
+	`fecha_mod` TIMESTAMP NULL DEFAULT NULL,
+	`id_user_mod` BIGINT NULL DEFAULT NULL,
+	`rol` ENUM('estudiante','instructor','administrador') NOT NULL DEFAULT 'estudiante' COLLATE 'utf8mb4_spanish_ci',
+	PRIMARY KEY (`id_usuario`) USING BTREE,
+	INDEX `id_persona` (`id_persona`) USING BTREE,
+	CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON UPDATE CASCADE ON DELETE SET NULL
+)
+COLLATE='utf8mb4_spanish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=29
+;
 
 INSERT INTO `usuario` ( `nombre_usuario`, `email`, `password`, `fecha_registro`, `id_persona`, `id_usuario_reg`, `fecha_mod`, `id_user_mod`, `rol`) VALUES
 ('juanperez', 'juanperez@example.com', 'password123', '2024-08-27 14:20:08', 11, NULL, NULL, NULL, 'estudiante'),

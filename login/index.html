@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>página de inicio de sesión y registro</title>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Crear una cuenta</h1>
+        <input type="text" placeholder="primer nombre" />
+        <input type="text" placeholder="segundo nombre" />
+        <input type="email" placeholder="email" />
+        <input type="number" placeholder="edad" />
+        <input type="password" placeholder="Contraseña" nombre="pswd1" />
+        <input type="password" placeholder="Confirma Contraseña" nombre="pswd2" />
+        <button type="submit" onclick="matchPassword()">Inscribirse</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Iniciar sesión</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>o usa tu cuenta</span>
+        <input type="email" placeholder="Email" />
+        <input type="Contraseña" placeholder="Contraseña" />
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <button>Iniciar sesión</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>¡Bienvenido de nuevo!</h1>
+          <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+          <button class="ghost" id="signIn">Iniciar sesión</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hola, Amigo!</h1>
+          <p>Introduce tus datos personales y comienza tu viaje con nosotros.</p>
+          <button class="ghost" id="signUp">Inscribirse</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="validacion.js"></script>
+</body>
+
+</html>

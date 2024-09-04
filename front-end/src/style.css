@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+.ingresar {
+  color: var(--azul, #a69180);
+  text-align: left;
+  font-family: var(--texto-cta-font-family, "Roboto-SemiBold", sans-serif);
+  font-size: var(--texto-cta-font-size, 16px);
+  font-weight: var(--texto-cta-font-weight, 600);
+  position: relative;
+}
+
+
+.frame {
+  align-items: flex-start;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.frame .div {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 15px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  position: relative;
+}
+
+.frame .icon-instance-node {
+  height: 24px !important;
+  position: relative !important;
+  width: 24px !important;
+}
+
+.frame .text-wrapper {
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.5px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .text-wrapper-2 {
+  color: var(--azul);
+  font-family: var(--texto-cta-font-family);
+  font-size: var(--texto-cta-font-size);
+  font-style: var(--texto-cta-font-style);
+  font-weight: var(--texto-cta-font-weight);
+  letter-spacing: var(--texto-cta-letter-spacing);
+  line-height: var(--texto-cta-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .div-3 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  position: relative;
+}
+
+.frame .div-wrapper {
+  align-items: center;
+  background-color: var(--dorado);
+  border-radius: 16px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+}
+ 
+
+.frame .div-4 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-5 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .thesis-rafiki {
+  height: 298.2px;
+  position: relative;
+  width: 400.8px;
+}
+
+.frame .aprende-a-tu-ritmo {
+  align-self: stretch;
+  color: #000000;
+  font-family: var(--parrafos-font-family);
+  font-size: var(--parrafos-font-size);
+  font-style: var(--parrafos-font-style);
+  font-weight: var(--parrafos-font-weight);
+  letter-spacing: var(--parrafos-letter-spacing);
+  line-height: var(--parrafos-line-height);
+  position: relative;
+  text-align: center;
+}
+
+.frame .div-6 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: var(--azul);
+  border-radius: 48px;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: center;
+  padding: 6px 12px;
+  position: relative;
+  width: 336px;
+}
+
+.frame .p {
+  color: var(--azul);
+  flex: 1;
+  font-family: var(--texto-inputs-font-family);
+  font-size: var(--texto-inputs-font-size);
+  font-style: var(--texto-inputs-font-style);
+  font-weight: var(--texto-inputs-font-weight);
+  letter-spacing: var(--texto-inputs-letter-spacing);
+  line-height: var(--texto-inputs-line-height);
+  position: relative;
+  text-align: center;
+}
+
+.frame .icon-instance-node-2 {
+  height: 16px !important;
+  position: relative !important;
+  width: 16px !important;
+}
+
+.frame .text-wrapper-3 {
+  align-self: stretch;
+  color: var(--negro);
+  font-family: var(--titulo-XL-font-family);
+  font-size: var(--titulo-XL-font-size);
+  font-style: var(--titulo-XL-font-style);
+  font-weight: var(--titulo-XL-font-weight);
+  letter-spacing: var(--titulo-XL-letter-spacing);
+  line-height: var(--titulo-XL-line-height);
+  position: relative;
+}
+
+.frame .div-7 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .frame-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  background-image: url(img/frame-14-4.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 230px;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-wrapper-2 {
+  align-items: center;
+  background-color: #a7a7a7;
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 4px 8px;
+  position: relative;
+}
+
+.frame .text-wrapper-4 {
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .div-8 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper-5 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: var(--titulo-l-font-family);
+  font-size: var(--titulo-l-font-size);
+  font-style: var(--titulo-l-font-style);
+  font-weight: var(--titulo-l-font-weight);
+  letter-spacing: var(--titulo-l-letter-spacing);
+  line-height: var(--titulo-l-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.frame .div-9 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper-6 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: var(--texto-complementario-font-family);
+  font-size: var(--texto-complementario-font-size);
+  font-style: var(--texto-complementario-font-style);
+  font-weight: var(--texto-complementario-font-weight);
+  letter-spacing: var(--texto-complementario-letter-spacing);
+  line-height: var(--texto-complementario-line-height);
+  margin-top: -1px;
+  position: relative;
+}
+
+.frame .text-wrapper-7 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  color: var(--gris);
+  display: -webkit-box;
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  height: 47px;
+  letter-spacing: 0;
+  line-height: normal;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+.frame .div-10 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-11 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  position: relative;
+}
+
+.frame .person-5 {
+  height: 12px !important;
+  position: relative !important;
+  width: 12px !important;
+}
+
+.frame .text-wrapper-8 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: var(--gris);
+  display: -webkit-box;
+  font-family: var(--texto-complementario-font-family);
+  font-size: var(--texto-complementario-font-size);
+  font-style: var(--texto-complementario-font-style);
+  font-weight: var(--texto-complementario-font-weight);
+  letter-spacing: var(--texto-complementario-letter-spacing);
+  line-height: var(--texto-complementario-line-height);
+  margin-top: -1px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .text-wrapper-9 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: var(--titulo-l-font-family);
+  font-size: var(--titulo-l-font-size);
+  font-style: var(--titulo-l-font-style);
+  font-weight: var(--titulo-l-font-weight);
+  letter-spacing: var(--titulo-l-letter-spacing);
+  line-height: var(--titulo-l-line-height);
+  position: relative;
+}
+
+.frame .div-12 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .cart-wrapper {
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: var(--azul);
+  border-radius: 24px;
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+  width: 48px;
+}
+
+.frame .div-wrapper-3 {
+  align-items: center;
+  background-color: var(--dorado);
+  border-radius: 24px;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.frame .text-wrapper-10 {
+  color: var(--azul);
+  font-family: var(--texto-cta-font-family);
+  font-size: var(--texto-cta-font-size);
+  font-style: var(--texto-cta-font-style);
+  font-weight: var(--texto-cta-font-weight);
+  letter-spacing: var(--texto-cta-letter-spacing);
+  line-height: var(--texto-cta-line-height);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .text-wrapper-11 {
+  align-self: stretch;
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+}
+
+.frame .div-13 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px 8px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .div-wrapper-4 {
+  align-items: center;
+  border: 1px solid;
+  border-color: var(--azul);
+  border-radius: 32px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.frame .text-wrapper-12 {
+  color: var(--azul);
+  font-family: "Roboto", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .div-14 {
+  align-self: stretch;
+  background-image: url(img/frame-26.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 6px;
+  height: 230px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper-13 {
+  align-self: stretch;
+  color: #000000;
+  font-family: "Roboto", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.frame .instructores-de-todo {
+  align-self: stretch;
+  color: transparent;
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.frame .span {
+  color: #000000;
+}
+
+.frame .text-wrapper-14 {
+  color: #ff0000;
+}
+
+.frame .div-15 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: var(--crema);
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper-15 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+}
+
+.frame .text-wrapper-16 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: "Roboto", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.frame .div-16 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper-17 {
+  color: var(--azul);
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame .text-wrapper-18 {
+  align-self: stretch;
+  color: var(--azul);
+  font-family: "Roboto", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}

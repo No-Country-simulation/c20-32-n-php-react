@@ -1,49 +1,65 @@
 {
-  "user": [
+  "usuario": [
     {
-      "id": "adminuser",
-      "name": "Nihira",
-      "password": "admin",
-      "email": "nihiratechiees@gmail.com",
-      "phone": "8989898989",
-      "country": "usa",
-      "address": "",
-      "role":"admin",
-      "gender": "female"
+      "id": "29",
+      "nombre_usuario": "juanperez",
+      "email": "juanperez@example.com",
+      "password": "password123",
+      "fecha_registro": "2024-08-27 10:20:08",
+      "id_persona": "11",
+      "id_reg": null,
+      "fecha_mod": null,
+      "id_user_mod": null,
+      "rol": "estudiante"
     },
     {
-      "id": "ntuser",
-      "name": "Fullname",
-      "password": "ntuser",
-      "email": "email@email.com",
-      "phone": "56778889989",
-      "country": "singapore",
-      "address": "address1\naddrees2",
-      "role":"user",
-      "gender": "male"
+      "id": "30",
+      "nombre_usuario": "mariagomez",
+      "email": "mariagomez@example.com",
+      "password": "password456",
+      "fecha_registro": "2024-08-27 10:20:08",
+      "id_persona": "12",
+      "id_reg": null,
+      "fecha_mod": null,
+      "id_user_mod": null,
+      "rol": "instructor"
     },
     {
-      "id": "faby",
-      "name": "Favian",
-      "password": "1",
-      "email": "fabinnerself@email.com",
-      "phone": "56778889989",
-      "country": "singapore",
-      "address": "address1\naddrees2",
-      "role":"user",
-      "gender": "male"
-    }    ,
+      "id": "31",
+      "nombre_usuario": "pedromartinez",
+      "email": "pedromartinez@example.com",
+      "password": "password789",
+      "fecha_registro": "2024-08-27 10:20:08",
+      "id_persona": "13",
+      "id_reg": null,
+      "fecha_mod": null,
+      "id_user_mod": null,
+      "rol": "estudiante"
+    },
     {
-      "id": "f@net",
-      "name": "Favian",
-      "password": "1",
-      "email": "fabinnerself@email.com",
-      "phone": "56778889989",
-      "country": "singapore",
-      "address": "address1\naddrees2",
-      "role":"user",
-      "gender": "male"
-    }  
+      "id": "32",
+      "nombre_usuario": "luciarodriguez",
+      "email": "luciarodriguez@example.com",
+      "password": "password123",
+      "fecha_registro": "2024-08-27 10:20:08",
+      "id_persona": "14",
+      "id_reg": null,
+      "fecha_mod": null,
+      "id_user_mod": null,
+      "rol": "estudiante"
+    },
+    {
+      "id": "33",
+      "nombre_usuario": "carlosfernandez",
+      "email": "carlosfernandez@example.com",
+      "password": "password456",
+      "fecha_registro": "2024-08-27 10:20:08",
+      "id_persona": "15",
+      "id_reg": null,
+      "fecha_mod": null,
+      "id_user_mod": null,
+      "rol": "administrador"
+    }     
   ],
   "roleaccess":[
     {

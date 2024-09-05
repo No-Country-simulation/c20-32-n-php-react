@@ -24,38 +24,40 @@ const LoginSignup = () => {
   const handleSignInClick = () => {
     setIsRightPanelActive(false);
   };
-
+ 
   const ProceedLogin = (e) => {
-    
     e.preventDefault();
+    
     if (validate()) {
-        ///implentation
-        // console.log('proceed');
-        fetch("http://localhost:8000/user/" + username).then((res) => {
-            return res.json();
-        }).then((resp) => {
-            //console.log(resp)
-            if (Object.keys(resp).length === 0) {
-                //toast.error('Favor ingresar un username valido');
-                alert('Favor ingresar un username valido')
+      //fetch("http://localhost:8000/usuario") // Fetch all users  json-server --watch db.json --port 8000
+      //fetch("http://192.168.1.11/t/api/usuario/") // Fetch all users xammp windos 10
+      fetch("http://192.168.1.10/u/api/usuario/") // Fetch all users ubuntu 22 linux 
+        .then((res) => res.json())
+        .then((data) => {
+          // Buscar el usuario por `nombre_usuario`
+          const user = data.find((u) => u.nombre_usuario === username);
+          if (!user) {
+            alert('Usuario no encontrado. Favor ingresar un nombre de usuario válido.');
+          } else {
+            // Verificar la contraseña
+            if (user.password === password) {
+              alert('Credenciales correctas');
+              sessionStorage.setItem('username', username);
+              sessionStorage.setItem('userrole', user.rol);
+              usenavigate('/student');
             } else {
-                if (resp.password === password) {
-                    //toast.success('Exito');
-                    alert("La credenciales son correctas")
-                    sessionStorage.setItem('username',username);
-                    sessionStorage.setItem('userrole',resp.role);
-                    usenavigate('/student')
-                }else{
-                    //toast.error('Favor ingrese unas credenciales validas ');
-                    alert('Favor ingrese unas credenciales validas ')
-                }
+              alert('Contraseña incorrecta. Favor ingresar unas credenciales válidas.');
             }
-        }).catch((err) => {
-            //toast.error('El login fallo debido a :' + err.message);
-            alert('El login fallo debido a :' + err.message)
+          }
+        })
+        .catch((err) => {
+          alert('El login falló debido a: ' + err.message);
         });
     }
-}
+  };
+  
+
+  
 const validate = () => {
   console.log("llega validate")
   let result = true;
@@ -106,7 +108,7 @@ const validate = () => {
             <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
           </div>
           <span>o usa tu cuenta</span>          
-          <input type="email" placeholder="Email" value={username} onChange={e => usernameupdate(e.target.value)}  />
+          <input  placeholder="Email" value={username} onChange={e => usernameupdate(e.target.value)}  />
           <input type="password" placeholder="Contraseña" value={password} onChange={e => passwordupdate(e.target.value)}  />
           <a href="#">¿Olvidaste tu contraseña?</a>
           <button>Iniciar sesión</button>

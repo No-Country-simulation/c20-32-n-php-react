@@ -80,7 +80,7 @@
 
 .frame .div-wrapper {
   align-items: center;
-  background-color: var(--dorado);
+  /*background-color: var(--dorado);*/
   border-radius: 16px;
   display: inline-flex;
   flex: 0 0 auto;

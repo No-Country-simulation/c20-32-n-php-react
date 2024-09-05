@@ -1,8 +1,9 @@
 // src/components/LoginSignup.js
 import React, { useState } from 'react';
 import AnimatedButton2 from './AnimatedButton2';
+import AnimatedButton3 from './AnimatedButton3';
 // import './style1.css';
-import "../style1.css";
+import "./style1.css";
 
 const LoginSignup = () => {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
@@ -63,6 +64,7 @@ const LoginSignup = () => {
             <button className="ghost" id="signUp" onClick={handleSignUpClick}>
               Inscribirse
             </button>
+            <div > <a href="/Student"><AnimatedButton3 /></a>   </div> 
           </div>
         </div>
       </div>

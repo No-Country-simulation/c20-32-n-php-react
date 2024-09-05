@@ -1,6 +1,7 @@
 // App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Principal from './components/01principal';
 import Page2 from './components/page2'; 
 import Page3 from './components/page3'; 
@@ -12,6 +13,8 @@ import LoginSignup from './components/LoginSignup';
 
 function App() {
     return (
+    <div className="App">
+      <ToastContainer theme='colored' position='top-center'></ToastContainer>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Principal />} />
@@ -22,6 +25,7 @@ function App() {
                 <Route path="/LoginSignup" element={<LoginSignup />} />
             </Routes>
         </BrowserRouter>
+        </div>
     );
 }
 

@@ -11,6 +11,14 @@ const LoginSignup = () => {
 
   const [username, usernameupdate] = useState('');
   const [password, passwordupdate] = useState('');
+
+  const [nombres, nameupdate] = useState('');
+  const [paterno, paternoupdate] = useState('');
+  const [email, emailupdate] = useState('');
+  const [fechanac, fechanacupdate] = useState('');
+  const [passwd, passwdupdate] = useState('');
+  const [passwd1, passwd1update] = useState('');
+
   const usenavigate=useNavigate();
 
   useEffect(()=>{
@@ -25,6 +33,68 @@ const LoginSignup = () => {
     setIsRightPanelActive(false);
   };
  
+  const ProceedInscribir = (f) => {
+    let str_aux=""
+    let str_json_user=""
+
+    f.preventDefault();
+    if (validate_incripcion()) {
+
+      let reg_persona = {          
+        "nombres": nombres,
+        "paterno": paterno,     
+        "fecha_nacimiento": fechanac,
+        "id_usuario_reg": "1",
+      } ;
+
+      let reg_usuario = {        
+        "nombre_usuario": email,
+        "email": email,
+        "password": passwd, 
+         "id_persona": "11",   
+         "id_usuario_reg": 1,    
+        "rol": "estudiante"
+    } ;      
+
+      str_json_user=JSON.stringify(reg_usuario)
+      str_aux=JSON.stringify(reg_persona)
+
+      console.log(str_aux)
+
+      
+      //console.log(regobj);
+      fetch("http://192.168.1.10/u/api/persona/", {
+          method: "POST",
+          headers: { 'content-type': 'application/json' },
+          body: str_aux
+      }).then((res) => {
+          //toast.success('Registrado correctamente.')
+         
+
+          fetch("http://192.168.1.10/u/api/usuario/", {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: str_json_user
+          }).then((res) => {
+            //toast.success('Registrado correctamente.')
+            alert('Registrado correctamente.')
+            usenavigate('/student');
+          }).catch((err) => {
+            //toast.error('Fallo :' + err.message);
+            alert('Fallo al registrar usuario:' + err.message)
+          });   
+
+      }).catch((err) => {
+          //toast.error('Fallo :' + err.message);
+          alert('Fallo al registrar persona:' + err.message)
+      });     
+      
+      
+    }
+
+  }
+
+
   const ProceedLogin = (e) => {
     e.preventDefault();
     
@@ -56,10 +126,56 @@ const LoginSignup = () => {
     }
   };
   
+const validate_incripcion= () => {
+  let result = true;
+  console.log("llega validate")
+  console.log("user " +nombres)
+  if (nombres === '' || nombres === null) {
+    console.log("llega validate nombres ")
+      result = false;
+      //toast.warning('Favor ingresar un nombre de usuario');
+      alert("Favor ingresar un nombre")
+  } 
+  console.log("user " +paterno)
+  if (paterno === '' || paterno === null) {
+    console.log("llega validate paterno ")
+      result = false;
+      //toast.warning('Favor ingresar un nombre de usuario');
+      alert("Favor ingresar un apellido paterno")
+  }   
+  console.log("user " +email)
+  if (email === '' || email === null) {
+    console.log("llega validate email ")
+      result = false;
+      //toast.warning('Favor ingresar un nombre de usuario');
+      alert("Favor ingresar un email")
+  }    
+    
+  if (passwd === '' || passwd === null) {
+    console.log("llega validate passwd ")
+      result = false;
+      //toast.warning('Favor ingresar un nombre de usuario');
+      alert("Favor ingresar una contraseña")
+  }     
+  if (passwd1 === '' || passwd1 === null) {
+    console.log("llega validate passwd1 ")
+      result = false;
+      //toast.warning('Favor ingresar un nombre de usuario');
+      alert("Favor ingresar la segunda contraseña")
 
+  }  else{
+    if(passwd!=passwd1 && result ){
+      result = false;
+      alert("Las contraseñas deben coincidir ")
+    }
+
+  }
+
+  return result;
+}
   
 const validate = () => {
-  console.log("llega validate")
+  //
   let result = true;
 
   console.log("user " +username)
@@ -85,17 +201,15 @@ const validate = () => {
     <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} id="container">
       
       <div className="form-container sign-up-container">
-        <form action="#">
+        <form onSubmit={ProceedInscribir} >
           <h1>Crear una cuenta</h1>
-          <input type="text" placeholder="Primer nombre" />
-          <input type="text" placeholder="Segundo nombre" />
-          <input type="email" placeholder="Email" />
-          <input type="number" placeholder="Edad" />
-          <input type="password" placeholder="Contraseña" name="pswd1" />
-          <input type="password" placeholder="Confirma Contraseña" name="pswd2" />
-          <button type="submit" onClick={() => alert('Función de inscripción aún no implementada')}>
-            Inscribirse
-          </button>
+          <input  value={nombres} placeholder="Primer nombre" onChange={e => nameupdate(e.target.value)}  />
+          <input  value={paterno} placeholder="Segundo nombre" onChange={e => paternoupdate(e.target.value)}  />
+          <input value={email} type="email" placeholder="Email" onChange={e => emailupdate(e.target.value)}  />
+          <input value={fechanac} type="date" placeholder="Fecha Nacimiento" onChange={e => fechanacupdate(e.target.value)}  />
+          <input value={passwd} type="password" placeholder="Contraseña" name="pswd1" onChange={e => passwdupdate(e.target.value)}  />
+          <input value={passwd1} type="password" placeholder="Confirma Contraseña" name="pswd2" onChange={e => passwd1update(e.target.value)}  />
+          <button  >            Inscribirse           </button>
         </form>
       </div>
       <div className="form-container sign-in-container">

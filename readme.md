@@ -56,6 +56,12 @@ Conoce a los talentosos miembros del equipo **c20-32-n-php-react** que han hecho
 
 ---
 
+### **👨‍💻 Diego Urioste**
+- 📧 **Email**: [daurioste@gmail.com](mailto:daurioste@gmail.com)
+- 🔗 **LinkedIn**:[(https://www.linkedin.com/in/diego-alberto-urioste-382600164/)](#)
+- 🐙 **GitHub**: [https://github.com/Diegodees](#)
+
+---
 🌐 **Conectemos!** Estamos siempre abiertos a nuevas ideas, colaboraciones y feedback. ¡No dudes en contactarnos! 🤝
 
 

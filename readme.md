@@ -202,6 +202,179 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 - **CP-022:** Validar el proceso de compra desde el carro.
   - **Pasos:** Proceder con la compra desde el carro.
   - **Resultado Esperado:** El proceso de compra se completa con éxito y se genera una confirmación de compra mediante mensaje “Compra Satisfactoria” y envío de mail.
+ 
+# Campus Alumnos
+
+### Historia de Usuario 1
+**Como alumno, quiero ingresar a mi curso adquirido desde el campus virtual, Para que
+** pueda acceder al contenido y actividades del curso.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver una lista de los cursos que ha adquirido.
+- El alumno debe poder acceder a cada curso desde el campus virtual.
+- El acceso debe ser seguro y verificar la autenticidad del usuario.
+
+**Casos de Prueba:**
+- **CP-023**: Verificar que la lista de cursos adquiridos se muestra correctamente.
+
+  **Pasos:**
+  1. Iniciar sesión como alumno.
+  2. Seleccionar un curso y verificar que el contenido y las actividades del curso sean accesibles.
+  
+  **Resultado:** Al ingresar como alumno y seleccionar un curso adquirido, el contenido y las actividades son accesibles.
+
+### Historia de Usuario 2
+**Como alumno, quiero acceder al material de estudio del curso, para que pueda revisar
+**documentos y otros recursos necesarios para el aprendizaje.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver una lista de materiales de estudio asociados a cada curso.
+- Los materiales deben poder ser reproducidos en línea.
+- Los materiales deben estar organizados de manera accesible (por ejemplo, por días, por temas o por semanas).
+
+**Casos de Prueba:**
+- **CP-024**: Verificar el acceso a la lista de material de estudio.
+
+  **Pasos:**
+  - Iniciar sesión como alumno.
+  - Seleccionar un curso y acceder al contenido y las actividades del curso accesibles.
+  
+  **Resultado Esperado:** Al ingresar como alumno y seleccionar un curso adquirido, el contenido y las actividades son accesibles.
+
+### Historia de Usuario 3
+**Como alumno, quiero acceder a las clases en vivo del curso, para que pueda participar en tiempo
+**real con el instructor.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver el horario de las clases en vivo.
+- El alumno debe poder unirse a las clases en vivo mediante un enlace o plataforma integrada.
+- La plataforma debe notificar al alumno sobre el horario de inicio de la clase en vivo.
+
+**Casos de Prueba:**
+- **CP-025**: Verificar la funcionalidad de clases en vivo que funcione correctamente.
+
+  **Pasos:**
+  - Iniciar sesión como alumno.
+  - Seleccionar un curso.
+  - Ver el horario de inicio e ingresar a ver clases en vivo.
+  
+  **Resultado esperado:** Como alumno registrado, puedo ver el horario y acceder a unirme a las clases en vivo.
+
+### Historia de Usuario 4
+**Como alumno, quiero ver videos tutoriales del curso, para que pueda aprender a través de contenido **audiovisual, ya sea subido a la plataforma o a través de enlaces a YouTube.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver una lista de videos tutoriales disponibles en el curso.
+- Los videos deben ser reproducibles dentro de la plataforma o mediante enlaces a YouTube.
+- Los videos deben permitir pausas, rebobinado y avance.
+
+**Casos de Prueba:**
+- **CP-026**: Verificar la funcionalidad de lista y de reproducción de videos.
+
+  **Pasos:**
+  - Acceder a la lista de videos tutoriales y seleccionar uno.
+  - Reproducir el video.
+  
+  **Resultado esperado:** Los videos tutoriales se reproducen correctamente y las funcionalidades de reproducción (pausa, rebobinar, avanzar) están operativas.
+
+### Historia de Usuario 5
+**Como alumno, quiero realizar exámenes en línea, para que pueda evaluar mi comprensión del material del curso.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver una lista de exámenes a cumplir.
+- El alumno debe poder iniciar, guardar y enviar exámenes en línea.
+- Los resultados deben ser proporcionados después de completar el examen.
+
+**Casos de Prueba:**
+- **CP-026**: Verificar que la lista de exámenes corresponda al temario del curso y que el alumno acceda exitosamente para completarlo.
+
+  **Pasos:**
+  1. Como usuario registrado, acceder a la sección de exámenes.
+  2. Seleccionar uno y completarlo.
+  
+  **Resultado esperado:** El examen se puede completar, guardar, enviar y el resultado se muestra correctamente.
+
+### Historia de Usuario 6
+**Como alumno, quiero ver mi progreso en el curso, para que* pueda seguir mi avance y ver si estoy cumpliedo con los contenidos.
+
+**Criterios de Aceptación:**
+- El alumno debe poder ver un resumen de su progreso en el curso.
+- La plataforma debe mostrar el avance en las tareas, exámenes y participación en clases en vivo.
+
+**Casos de Prueba:**
+- **CP-027**: Verificar que la sección progreso del alumno muestre el progreso.
+
+  **Pasos:**
+  -. Ingresar como usuario y acceder a la sección de progreso.
+  
+  **Resultado Esperado:** Se muestra correctamente el progreso del alumno.
+
+## Docentes
+
+### Historia de Usuario 1
+**Como** docente,  
+**Quiero** ingresar a los cursos que tengo asignados,  
+**Para que** pueda gestionar el contenido de los cursos y la interacción con los alumnos.
+
+**Criterios de Aceptación:**
+- El docente debe poder ver una lista de los cursos asignados.
+- El docente debe poder acceder y gestionar cada curso desde el campus virtual.
+- El acceso debe estar restringido a los cursos que el docente tiene asignados.
+
+**Casos de Prueba:**
+- Inicia sesión como docente.
+- Verifica que la lista de cursos asignados se muestra correctamente.
+- Accede a un curso y verifica que el contenido y las funcionalidades de gestión están disponibles.
+
+### Historia de Usuario 2
+**Como docente, quiero subir material de estudio al curso, para que los alumnos puedan acceder a los recursos necesarios para su aprendizaje.
+
+**Criterios de Aceptación:**
+- El docente debe poder subir archivos de material de estudio a la plataforma.
+- Los archivos deben estar organizados y disponibles para los alumnos.
+- El docente debe poder eliminar o actualizar materiales existentes.
+
+**Casos de Prueba:**
+- Sube un archivo de material de estudio y verifica que se haya cargado correctamente.
+- Asegúrate de que los alumnos puedan acceder al material y que se muestre correctamente.
+
+### Historia de Usuario 3
+**Como docente, quiero subir videos al curso o proporcionar enlaces a YouTube, para que los alumnos puedan ver contenido audiovisual relevante para el curso.
+
+**Criterios de Aceptación:**
+- El docente debe poder subir videos directamente o agregar enlaces a YouTube.
+- Los videos deben ser accesibles y reproducibles para los alumnos.
+- El docente debe poder organizar los videos por temas o secciones.
+
+**Casos de Prueba:**
+1. Sube un video o proporciona un enlace a YouTube.
+2. Verifica que el video esté disponible para los alumnos y que se pueda reproducir sin problemas.
+
+### Historia de Usuario 4
+**Como docente, quiero corregir trabajos enviados por los alumnos, para que pueda proporcionar retroalimentación y calificaciones.
+
+**Criterios de Aceptación:**
+- El docente debe poder acceder a los trabajos enviados por los alumnos.
+- El docente debe poder calificar y comentar sobre los trabajos.
+- Las calificaciones y comentarios deben ser visibles para los alumnos.
+
+**Casos de Prueba:**
+1. Accede a una tarea enviada por un alumno.
+2. Califica el trabajo y deja un comentario.
+3. Verifica que la calificación y el comentario sean visibles para el alumno.
+
+### Historia de Usuario 5
+**Como docente, quiero seguir el progreso de los alumnos en el curso, para que pueda monitorear su desempeño.
+
+**Criterios de Aceptación:**
+- El docente debe poder ver un resumen del progreso de cada alumno.
+- La plataforma debe mostrar el avance en tareas, exámenes y participación en clases.
+- El docente debe poder generar informes o estadísticas si es necesario.
+
+**Casos de Prueba:**
+- Accede a la sección de progreso de alumnos.
+- Verifica que el resumen del progreso se muestre correctamente, incluyendo resultados de exámenes y participación en clases.
+
 
 ## Acerca de (About Us)
 

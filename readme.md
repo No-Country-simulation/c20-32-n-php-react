@@ -205,9 +205,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
  
 # Campus Alumnos
 
-### Historia de Usuario 1
-**Como alumno, quiero ingresar a mi curso adquirido desde el campus virtual, Para que
-** pueda acceder al contenido y actividades del curso.
+**Historia de Usuario 1:** Como alumno, quiero ingresar a mi curso adquirido desde el campus virtual, Para que pueda acceder al contenido y actividades del curso.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver una lista de los cursos que ha adquirido.
@@ -218,14 +216,12 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 - **CP-023**: Verificar que la lista de cursos adquiridos se muestra correctamente.
 
   **Pasos:**
-  1. Iniciar sesión como alumno.
-  2. Seleccionar un curso y verificar que el contenido y las actividades del curso sean accesibles.
+  - Iniciar sesión como alumno.
+  - Seleccionar un curso y verificar que el contenido y las actividades del curso sean accesibles.
   
   **Resultado:** Al ingresar como alumno y seleccionar un curso adquirido, el contenido y las actividades son accesibles.
 
-### Historia de Usuario 2
-**Como alumno, quiero acceder al material de estudio del curso, para que pueda revisar
-**documentos y otros recursos necesarios para el aprendizaje.
+**Historia de Usuario 2:** Como alumno, quiero acceder al material de estudio del curso, para que pueda revisardocumentos y otros recursos necesarios para el aprendizaje.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver una lista de materiales de estudio asociados a cada curso.
@@ -241,9 +237,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
   
   **Resultado Esperado:** Al ingresar como alumno y seleccionar un curso adquirido, el contenido y las actividades son accesibles.
 
-### Historia de Usuario 3
-**Como alumno, quiero acceder a las clases en vivo del curso, para que pueda participar en tiempo
-**real con el instructor.
+**Historia de Usuario 1:** Como alumno, quiero acceder a las clases en vivo del curso, para que pueda participar en tiempo real con el instructor.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver el horario de las clases en vivo.
@@ -260,8 +254,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
   
   **Resultado esperado:** Como alumno registrado, puedo ver el horario y acceder a unirme a las clases en vivo.
 
-### Historia de Usuario 4
-**Como alumno, quiero ver videos tutoriales del curso, para que pueda aprender a través de contenido **audiovisual, ya sea subido a la plataforma o a través de enlaces a YouTube.
+**Historia de Usuario 4:** Como alumno, quiero ver videos tutoriales del curso, para que pueda aprender a través de contenido audiovisual, ya sea subido a la plataforma o a través de enlaces a YouTube.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver una lista de videos tutoriales disponibles en el curso.
@@ -277,8 +270,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
   
   **Resultado esperado:** Los videos tutoriales se reproducen correctamente y las funcionalidades de reproducción (pausa, rebobinar, avanzar) están operativas.
 
-### Historia de Usuario 5
-**Como alumno, quiero realizar exámenes en línea, para que pueda evaluar mi comprensión del material del curso.
+**Historia de Usuario 5:** Como alumno, quiero realizar exámenes en línea, para que pueda evaluar mi comprensión del material del curso.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver una lista de exámenes a cumplir.
@@ -289,13 +281,12 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 - **CP-026**: Verificar que la lista de exámenes corresponda al temario del curso y que el alumno acceda exitosamente para completarlo.
 
   **Pasos:**
-  1. Como usuario registrado, acceder a la sección de exámenes.
-  2. Seleccionar uno y completarlo.
+  - Como usuario registrado, acceder a la sección de exámenes.
+  - Seleccionar uno y completarlo.
   
   **Resultado esperado:** El examen se puede completar, guardar, enviar y el resultado se muestra correctamente.
 
-### Historia de Usuario 6
-**Como alumno, quiero ver mi progreso en el curso, para que* pueda seguir mi avance y ver si estoy cumpliedo con los contenidos.
+**Historia de Usuario 6:** Como alumno, quiero ver mi progreso en el curso, para que* pueda seguir mi avance y ver si estoy cumpliedo con los contenidos.
 
 **Criterios de Aceptación:**
 - El alumno debe poder ver un resumen de su progreso en el curso.
@@ -311,10 +302,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 
 ## Docentes
 
-### Historia de Usuario 1
-**Como** docente,  
-**Quiero** ingresar a los cursos que tengo asignados,  
-**Para que** pueda gestionar el contenido de los cursos y la interacción con los alumnos.
+**Historia de Usuario 1:** Como docente, quiero ingresar a los cursos que tengo asignados, para que pueda gestionar el contenido de los cursos y la interacción con los alumnos.
 
 **Criterios de Aceptación:**
 - El docente debe poder ver una lista de los cursos asignados.
@@ -326,8 +314,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 - Verifica que la lista de cursos asignados se muestra correctamente.
 - Accede a un curso y verifica que el contenido y las funcionalidades de gestión están disponibles.
 
-### Historia de Usuario 2
-**Como docente, quiero subir material de estudio al curso, para que los alumnos puedan acceder a los recursos necesarios para su aprendizaje.
+**Historia de Usuario 2:** Como docente, quiero subir material de estudio al curso, para que los alumnos puedan acceder a los recursos necesarios para su aprendizaje.
 
 **Criterios de Aceptación:**
 - El docente debe poder subir archivos de material de estudio a la plataforma.
@@ -338,8 +325,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 - Sube un archivo de material de estudio y verifica que se haya cargado correctamente.
 - Asegúrate de que los alumnos puedan acceder al material y que se muestre correctamente.
 
-### Historia de Usuario 3
-**Como docente, quiero subir videos al curso o proporcionar enlaces a YouTube, para que los alumnos puedan ver contenido audiovisual relevante para el curso.
+**Historia de Usuario 3:** Como docente, quiero subir videos al curso o proporcionar enlaces a YouTube, para que los alumnos puedan ver contenido audiovisual relevante para el curso.
 
 **Criterios de Aceptación:**
 - El docente debe poder subir videos directamente o agregar enlaces a YouTube.
@@ -350,8 +336,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 1. Sube un video o proporciona un enlace a YouTube.
 2. Verifica que el video esté disponible para los alumnos y que se pueda reproducir sin problemas.
 
-### Historia de Usuario 4
-**Como docente, quiero corregir trabajos enviados por los alumnos, para que pueda proporcionar retroalimentación y calificaciones.
+**Historia de Usuario 4:**Como docente, quiero corregir trabajos enviados por los alumnos, para que pueda proporcionar retroalimentación y calificaciones.
 
 **Criterios de Aceptación:**
 - El docente debe poder acceder a los trabajos enviados por los alumnos.
@@ -363,8 +348,7 @@ El objetivo de este documento es proporcionar una guía para realizar pruebas de
 2. Califica el trabajo y deja un comentario.
 3. Verifica que la calificación y el comentario sean visibles para el alumno.
 
-### Historia de Usuario 5
-**Como docente, quiero seguir el progreso de los alumnos en el curso, para que pueda monitorear su desempeño.
+**Historia de Usuario 5:**Como docente, quiero seguir el progreso de los alumnos en el curso, para que pueda monitorear su desempeño.
 
 **Criterios de Aceptación:**
 - El docente debe poder ver un resumen del progreso de cada alumno.

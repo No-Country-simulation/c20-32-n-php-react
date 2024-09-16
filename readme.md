@@ -17,7 +17,7 @@
 
                              Año 2024
 
-## Documento de Testing QA para Plataforma E-Learning
+## Documento de Testing QA para Plataforma E-Learning   {Formulario Casos de Prueba}(https://docs.google.com/spreadsheets/d/1keWtXBmFceNRFY4vzeXN86-HZZK_xZyM/edit?usp=drive_link&ouid=106316769415190824964&rtpof=true&sd=true)
 
 ### Objetivo
 El objetivo de este documento es proporcionar una guía para realizar pruebas de Testing (QA) en la plataforma E-Learning en su etapa inicial. Esta guía servirá como referencia para garantizar que todas las funcionalidades del sistema se comporten según lo esperado y cumplan con los requisitos especificados.

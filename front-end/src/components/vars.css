@@ -1,0 +1,44 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  --azul: #090073;
+  --crema: #ece6e3;
+  --dorado: #a69180;
+  --gris: #4b4b4b;
+  --negro: #1e1e1e;
+  --blanco: #fafafa;
+
+  /* Fonts */
+  --parrafos-font-family: Roboto-Regular, sans-serif;
+  --parrafos-font-size: 14px;
+  --parrafos-line-height: normal;
+  --parrafos-font-weight: 400;
+  --parrafos-font-style: normal;
+  --texto-cta-font-family: Roboto-SemiBold, sans-serif;
+  --texto-cta-font-size: 16px;
+  --texto-cta-line-height: normal;
+  --texto-cta-font-weight: 600;
+  --texto-cta-font-style: normal;
+  --texto-inputs-font-family: Roboto-Light, sans-serif;
+  --texto-inputs-font-size: 14px;
+  --texto-inputs-line-height: normal;
+  --texto-inputs-font-weight: 300;
+  --texto-inputs-font-style: normal;
+  --titulo-xl-font-family: Roboto-Bold, sans-serif;
+  --titulo-xl-font-size: 20px;
+  --titulo-xl-line-height: normal;
+  --titulo-xl-font-weight: 700;
+  --titulo-xl-font-style: normal;
+  --titulo-l-font-family: Roboto-Medium, sans-serif;
+  --titulo-l-font-size: 16px;
+  --titulo-l-line-height: normal;
+  --titulo-l-font-weight: 500;
+  --titulo-l-font-style: normal;
+  --texto-complementario-font-family: Roboto-Light, sans-serif;
+  --texto-complementario-font-size: 14px;
+  --texto-complementario-line-height: normal;
+  --texto-complementario-font-weight: 300;
+  --texto-complementario-font-style: normal;
+
+  /* Effects */
+}

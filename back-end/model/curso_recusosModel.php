@@ -25,6 +25,20 @@ class cursoRecursosModel {
         return $recursos;
     }
 
+    public function getRecursosCurse($id = null) {
+        $where = ($id == null) ? "" : " WHERE id_curso='$id'";
+        $recursos = [];
+        $sql = "SELECT * FROM curso_recursos" . $where;
+        $registros = mysqli_query($this->conexion, $sql);
+        
+        while ($row = mysqli_fetch_assoc($registros)) {
+            array_push($recursos, $row);
+        }
+        
+        return $recursos;
+    }    
+
+
     // Método para guardar un nuevo recurso
     public function saveRecurso($id_curso, $detalle_recurso, $tipo_recurso, $nombre, $user_ad) {
         $sql = "INSERT INTO curso_recursos (id_curso, detalle_recurso, tipo_recurso, nombre, user_ad) 

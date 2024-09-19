@@ -27,10 +27,21 @@ class cursoModel {
     // Método para guardar un nuevo curso
     public function saveCurso($titulo, $descripcion, $contenido, $duracion, $foto, $valoracion, $costo, $id_instructor, $id_usuario_reg) {
         $sql = "INSERT INTO curso (titulo, descripcion, contenido, duracion, foto, valoracion, costo, id_instructor, id_usuario_reg) 
-                VALUES ('$titulo', '$descripcion', '$contenido', '$duracion', '$foto', '$valoracion', '$costo', '$id_instructor', '$id_usuario_reg')";
+                VALUES ('$titulo', '$descripcion', '$contenido', $duracion, '$foto', $valoracion, $costo, $id_instructor, $id_usuario_reg)";
+        //echo "sql $sql";
         mysqli_query($this->conexion, $sql);
+
+        $id_curso_insertado = mysqli_insert_id($this->conexion);
+
+        $resultado = [
+            'resultado' => 'success',
+            'mensaje' => 'Registro de curso guardado',
+            'id_nuevo_curso' => $id_curso_insertado
+        ];        
         
-        return ['success', 'Curso guardado'];
+        $resultado_json = json_encode($resultado);        
+        
+        return $resultado_json;
     }
 
     // Método para actualizar un curso existente

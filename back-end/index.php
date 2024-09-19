@@ -156,7 +156,35 @@
             <td><a href="./api/curso_recurso/{id}" class="btn delete">DELETE</a></td>
             <td>/api/curso_recurso/{id}</td>
             <td>Elimina un recurso de curso por su ID.</td>
-        </tr>                        
+        </tr>   
+        
+        
+        <tr>
+            <td colspan="3"><h3>Persona Usuario API</h3></td>
+        </tr>
+        <tr>
+            <td><a href="./api/usuarioPersona/" class="btn get">GET</a></td>
+            <td>/api/usuarioPersona/</td>
+            <td>Obtiene una lista de todos los Usuarios Personas.</td>
+        </tr>
+        <tr>
+            <td colspan="3"><h3>Curso Listado API</h3></td>
+        </tr>
+        <tr>
+            <td><a href="./api/cursoListado/" class="btn get">GET</a></td>
+            <td>/api/cursoListado/</td>
+            <td>Obtiene una lista de todos cursos.</td>
+        </tr>     
+        <tr>
+            <td colspan="3"><h3>Instructores API</h3></td>
+        </tr>
+        <tr>
+            <td><a href="./api/instructor/" class="btn get">GET</a></td>
+            <td>/api/instructor/</td>
+            <td>Obtiene una lista de todos los instructores.</td>
+        </tr>           
+
+
     </table>
 
 </body>

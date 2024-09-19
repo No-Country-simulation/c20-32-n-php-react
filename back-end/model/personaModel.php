@@ -28,29 +28,55 @@ class personaModel {
     public function savePersona($nombres, $paterno, $materno,$direccion, $telefono, $mobile, $fecha_nacimiento, $id_usuario_reg, $id_profesion) {
         $valida = $this->validatePersona($nombres, $paterno, $fecha_nacimiento);
         $resultado = ['error', 'Ya existe una persona con las mismas características'];
-        
+        if($fecha_nacimiento==""){
+            $fecha_nacimiento="null";
+        }
+        else{
+            $fecha_nacimiento="'$fecha_nacimiento'";
+        }
+        if($id_profesion==""){
+            $id_profesion="null";
+        }else{
+            $id_profesion="'$id_profesion'";
+        }
+
+
+
         if (count($valida) == 0) {
             $sql = "INSERT INTO persona (nombres, paterno, materno,direccion, telefono, mobile, fecha_nacimiento, id_usuario_reg, id_profesion) 
-                    VALUES ('$nombres', '$paterno', '$materno','$direccion', '$telefono', '$mobile','$fecha_nacimiento', '$id_usuario_reg', '$id_profesion')";
-            //echo "query: $sql";
+                    VALUES ('$nombres', '$paterno', '$materno','$direccion', '$telefono', '$mobile',$fecha_nacimiento, $id_usuario_reg, $id_profesion)";
+            echo "query: $sql";
             mysqli_query($this->conexion, $sql);
-            $resultado = ['success', 'Persona guardada'];
+
+            $id_persona_insertada = mysqli_insert_id($this->conexion);
+
+            $resultado = [
+                'resultado' => 'success',
+                'mensaje' => 'Persona guardada',
+                'id_nueva_persona' => $id_persona_insertada
+            ];        
+            
+            $resultado_json = json_encode($resultado);
         }
         
-        return $resultado;
+        return $resultado_json;
     }
 
     // Método para actualizar una persona existente
     public function updatePersona($id, $nombres, $paterno, $materno,$direccion, $telefono, $mobile,$fecha_nacimiento, $id_user_mod, $id_profesion) {
         $existe = $this->getPersonas($id);
         $resultado = ['error', 'No existe la persona con ID ' . $id];
+
+        //echo "ip: $id_profesion";
+        if(empty($id_profesion) || $id_profesion==="" )
+            $id_profesion="null";
         
         if (count($existe) > 0) {
              
                 $sql = "UPDATE persona 
                         SET nombres='$nombres', paterno='$paterno', materno='$materno', direccion='$direccion' ,
                         telefono='$telefono', mobile='$mobile',fecha_nacimiento='$fecha_nacimiento', 
-                        id_user_mod='$id_user_mod', id_profesion='$id_profesion' 
+                        id_user_mod=$id_user_mod, id_profesion=$id_profesion 
                         WHERE id_persona=$id";
                 //echo "query: $sql";
 
@@ -68,7 +94,8 @@ class personaModel {
         $resultado = ['error', 'No existe la persona con ID ' . $id];
         
         if (count($valida) > 0) {
-            $sql = "DELETE FROM persona WHERE id_persona='$id'";
+            $sql = "DELETE FROM persona WHERE id_persona=$id";
+            //echo "sql: $sql";
             mysqli_query($this->conexion, $sql);
             $resultado = ['success', 'Persona eliminada'];
         }

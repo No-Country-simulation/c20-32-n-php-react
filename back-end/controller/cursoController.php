@@ -43,7 +43,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
    case 'PUT':
       $_PUT = json_decode(file_get_contents('php://input', true));
-      if(!isset($_PUT->id) || is_null($_PUT->id) || empty(trim($_PUT->id))){
+      if(!isset($_PUT->id_curso) || is_null($_PUT->id_curso) || empty(trim($_PUT->id_curso))){
          $respuesta = ['error', 'El ID del curso no debe estar vacío'];
       }
       else if(!isset($_PUT->titulo) || is_null($_PUT->titulo) || empty(trim($_PUT->titulo)) || strlen($_PUT->titulo) > 500){
@@ -51,7 +51,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       else {
          $respuesta = $cursoModel->updateCurso(
-            $_PUT->id, 
+            $_PUT->id_curso, 
             $_PUT->titulo, 
             $_PUT->descripcion, 
             $_PUT->contenido, 
@@ -66,7 +66,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       echo json_encode($respuesta);
    break;
 
-   /*
+    
    case 'DELETE':
       $_DELETE = json_decode(file_get_contents('php://input', true));
       if(!isset($_DELETE->id) || is_null($_DELETE->id) || empty(trim($_DELETE->id))){
@@ -77,17 +77,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
-   */
-  case 'DELETE':
-   // Extraer el ID de la URL
-   $id = isset($_GET['id']) ? $_GET['id'] : null;
-   if(is_null($id) || empty(trim($id))){
-       $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
-   }
-   else {
-       $respuesta = $cursoModel->deleteCurso($id);
-   }
-   echo json_encode($respuesta);
-break;   
+    
+   
 }
 ?>

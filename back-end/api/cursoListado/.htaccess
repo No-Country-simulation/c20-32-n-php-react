@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /u/api/usuario/
+RewriteBase /t/back-end1/api/cursoListado/
 
 # Redirige las URLs del tipo /t/a/1 a /t/a/?id=1
 RewriteRule ^([0-9]+)$ index.php?id=$1 [L,QSA]

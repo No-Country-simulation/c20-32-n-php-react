@@ -20,6 +20,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
    case 'POST':
       
       $_POST = json_decode(file_get_contents('php://input', true));
+
+      /*
+      echo '<pre>';
+      print_r($_POST);
+      echo '</pre>';
+      */
+      
       if(!isset($_POST->nombre_usuario) || is_null($_POST->nombre_usuario) || empty(trim($_POST->nombre_usuario)) || strlen($_POST->nombre_usuario) > 80){
          $respuesta = ['error', 'El nombre de usuario no debe estar vacío y no debe tener más de 80 caracteres'];
       }
@@ -41,16 +48,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
    case 'PUT':
 
-      $id = isset($_GET['id']) ? $_GET['id'] : null;
+      
 
       // Obtener y decodificar los datos de la solicitud PUT
       $putData = json_decode(file_get_contents('php://input'), true);
 
+      $id = isset($putData['id_usuario']) ? $putData['id_usuario'] : null;
        /*
       echo '<pre>';
       print_r($putData);
       echo '</pre>';
-       */       
+             */
 
       //echo   "val: ".$putData['nombres'];
 
@@ -82,7 +90,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
    break;
  
 
-/*
+
    case 'DELETE':
       $_DELETE = json_decode(file_get_contents('php://input', true));
       if(!isset($_DELETE->id) || is_null($_DELETE->id) || empty(trim($_DELETE->id))){
@@ -93,17 +101,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
-   */
-  case 'DELETE':
-   // Extraer el ID de la URL
-   $id = isset($_GET['id']) ? $_GET['id'] : null;
-   if(is_null($id) || empty(trim($id))){
-       $respuesta = ['error', 'El ID del usuario no debe estar vacío'];
-   }
-   else {
-       $respuesta = $usuarioModel->deleteUsuario($id);
-   }
-   echo json_encode($respuesta);
-break;   
+   
+ 
 }
 ?>

@@ -31,8 +31,10 @@ class usuarioModel {
                 VALUES ('$nombre_usuario', '$email', '$password', $id_persona, $id_usuario_reg,'$rol')";
         //echo "q: $sql";
         mysqli_query($this->conexion, $sql);
+
+        $id_persona_insertada = mysqli_insert_id($this->conexion);
         
-        return ['success', 'Usuario guardado'];
+        return ['success', 'Usuario guardado',"id nuevo usuario",$id_persona_insertada];
     }
 
     // Método para actualizar un usuario existente

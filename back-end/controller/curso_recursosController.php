@@ -12,9 +12,18 @@ $cursoRecursosModel = new cursoRecursosModel();
 switch ($_SERVER['REQUEST_METHOD']) {
  
    case 'GET':
-      $id = isset($_GET['id']) ? $_GET['id'] : null;        
-      $respuesta = $cursoRecursosModel->getRecursos($id);
-      echo json_encode($respuesta);
+      $id = isset($_GET['id']) ? $_GET['id'] : null;    
+      
+      if($id != null){
+         $respuesta = $cursoRecursosModel->getRecursos($id);
+         echo json_encode($respuesta);
+      }
+      else{
+         $id = isset($_GET['id_curso']) ? $_GET['id_curso'] : null;             
+         $respuesta = $cursoRecursosModel->getRecursosCurse($id);
+         echo json_encode($respuesta);
+
+      }
       break;     
 
    case 'POST':
@@ -36,12 +45,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
    case 'PUT':
       $_PUT = json_decode(file_get_contents('php://input', true));
-      if(!isset($_PUT->id) || is_null($_PUT->id) || empty(trim($_PUT->id))){
+      if(!isset($_PUT->id_curso_recurso) || is_null($_PUT->id_curso_recurso) || empty(trim($_PUT->id_curso_recurso))){
          $respuesta = ['error', 'El ID del recurso no debe estar vacío'];
       }
       else {
          $respuesta = $cursoRecursosModel->updateRecurso(
-            $_PUT->id, 
+            $_PUT->id_curso_recurso, 
             $_PUT->id_curso, 
             $_PUT->detalle_recurso, 
             $_PUT->tipo_recurso, 
@@ -51,7 +60,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
-   /*
+    
 
    case 'DELETE':
       $_DELETE = json_decode(file_get_contents('php://input', true));
@@ -63,8 +72,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
       }
       echo json_encode($respuesta);
    break;
-   */
-  case 'DELETE':
+    
+ 
    // Extraer el ID de la URL
    $id = isset($_GET['id']) ? $_GET['id'] : null;
    if(is_null($id) || empty(trim($id))){

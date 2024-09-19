@@ -1,13 +1,14 @@
 <?php
 class Database {
-    private $host = 'localhost';
+    private $host = 'fra1.clusters.zeabur.com';
     private $user = 'root';
-    private $password = 'Pers.1987$';
+    private $password = 'B71ui3bNhz4MUdf0t2LWrs5P6vc89RKp';
     private $dbname = 'cursoteka';
+    private $port = 30922;
     public $conexion;
 
     public function __construct() {
-        $this->conexion = new mysqli($this->host, $this->user, $this->password, $this->dbname);
+        $this->conexion = new mysqli($this->host, $this->user, $this->password, $this->dbname , $this->port);
         if ($this->conexion->connect_error) {
             die('Conexión fallida: ' . $this->conexion->connect_error);
         }

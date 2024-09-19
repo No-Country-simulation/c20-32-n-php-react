@@ -74,34 +74,37 @@ INSERT INTO `usuario` ( `nombre_usuario`, `email`, `password`, `fecha_registro`,
 ('pedromartinez', 'pedromartinez@example.com', 'password789', '2024-08-27 14:20:08', 13, NULL, NULL, NULL, 'estudiante'),
 ('luciarodriguez', 'luciarodriguez@example.com', 'password123', '2024-08-27 14:20:08', 14, NULL, NULL, NULL, 'estudiante'),
 ('carlosfernandez', 'carlosfernandez@example.com', 'password456', '2024-08-27 14:20:08', 15, NULL, NULL, NULL, 'administrador');
-
-DROP TABLE IF EXISTS `curso`;
-CREATE TABLE IF NOT EXISTS `curso` (
-  `id_curso` bigint NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
-  `contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
-  `duracion` int DEFAULT NULL,
-  `foto` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `valoracion` int DEFAULT NULL,
-  `costo` float DEFAULT NULL,
-  `id_instructor` bigint DEFAULT NULL,
-  `fecha_registro` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_usuario_reg` bigint DEFAULT NULL,
-  `fecha_mod` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `id_user_mod` bigint DEFAULT NULL,
-  PRIMARY KEY (`id_curso`),
-  KEY `fk_instructor` (`id_instructor`),
-  CONSTRAINT `fk_instructor` FOREIGN KEY (`id_instructor`) REFERENCES `usuario` (`id_usuario`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+ 
+ CREATE TABLE `curso` (
+	`id_curso` BIGINT(19) NOT NULL AUTO_INCREMENT,
+	`titulo` VARCHAR(500) NOT NULL COLLATE 'utf8mb4_spanish_ci',
+	`descripcion` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_spanish_ci',
+	`contenido` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_spanish_ci',
+	`duracion` INT(10) NULL DEFAULT NULL,
+	`foto` VARCHAR(150) NULL DEFAULT NULL COLLATE 'utf8mb4_spanish_ci',
+	`valoracion` INT(10) NULL DEFAULT NULL,
+	`costo` FLOAT NULL DEFAULT NULL,
+	`id_instructor` BIGINT(19) NULL DEFAULT NULL,
+	`fecha_registro` TIMESTAMP NULL DEFAULT 'CURRENT_TIMESTAMP',
+	`id_usuario_reg` BIGINT(19) NULL DEFAULT NULL,
+	`fecha_mod` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	`id_user_mod` BIGINT(19) NULL DEFAULT NULL,
+	PRIMARY KEY (`id_curso`) USING BTREE,
+	INDEX `fk_instructor` (`id_instructor`) USING BTREE,
+	CONSTRAINT `fk_instructor` FOREIGN KEY (`id_instructor`) REFERENCES `persona` (`id_persona`) ON UPDATE CASCADE ON DELETE SET NULL
+)
+COLLATE='utf8mb4_spanish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=6
 
 INSERT INTO `curso` (  `titulo`, `descripcion`, `contenido`, `duracion`, `foto`, `valoracion`, `costo`, `id_instructor`, `fecha_registro`, `id_usuario_reg`) VALUES
-('Curso de Programación en Python', 'Un curso completo para aprender Python desde cero.', 'Contenido detallado sobre Python', 30, 'foto_python.jpg', 5, 99.99, 26, '2024-08-27 15:41:20', 26 ),
-('Curso de Programación en Python', 'Un curso completo para aprender Python desde cero.', 'Contenido detallado sobre Python.', 30, 'foto_python.jpg', 5, 99.99, 27, '2024-08-27 15:42:21', 27 ),
-('Introducción al Desarrollo Web', 'Curso básico de desarrollo web con HTML, CSS y JavaScript.', 'Material introductorio y ejemplos prácticos.', 20, 'foto_web.jpg', 4, 49.99, 27, '2024-08-27 15:42:21', 27 ),
-('Diseño Gráfico con Photoshop', 'Aprende a usar Photoshop para crear diseños impactantes.', 'Tutoriales paso a paso sobre Photoshop.', 25, 'foto_photoshop.jpg', 4, 79.99, 27, '2024-08-27 15:42:21', 26 ),
-('Análisis de Datos con R', 'Curso avanzado sobre análisis de datos utilizando R.', 'Contenido especializado en análisis estadístico.', 40, 'foto_r.jpg', 5, 149.99, 27, '2024-08-27 15:42:21', 26 ),
-('Manejo de Bases de Datos con MySQL', 'Curso práctico para aprender a manejar bases de datos con MySQL.', 'Material exhaustivo sobre administración de bases de datos.', 35, 'foto_mysql.jpg', 4, 89.99, 30, '2024-08-27 15:42:21', 26 );
+('Curso de Programación en Python', 'Un curso completo para aprender Python desde cero.', 'Contenido detallado sobre Python', 30, 'foto_python.jpg', 5, 99.99, 66, '2024-08-27 15:41:20', 1 ),
+('Curso de Programación en Python', 'Un curso completo para aprender Python desde cero.', 'Contenido detallado sobre Python.', 30, 'foto_python.jpg', 5, 99.99, 67, '2024-08-27 15:42:21', 1 ),
+('Introducción al Desarrollo Web', 'Curso básico de desarrollo web con HTML, CSS y JavaScript.', 'Material introductorio y ejemplos prácticos.', 20, 'foto_web.jpg', 4, 49.99, 67, '2024-08-27 15:42:21', 1 ),
+('Diseño Gráfico con Photoshop', 'Aprende a usar Photoshop para crear diseños impactantes.', 'Tutoriales paso a paso sobre Photoshop.', 25, 'foto_photoshop.jpg', 4, 79.99, 67, '2024-08-27 15:42:21', 1 ),
+('Análisis de Datos con R', 'Curso avanzado sobre análisis de datos utilizando R.', 'Contenido especializado en análisis estadístico.', 40, 'foto_r.jpg', 5, 149.99, 67, '2024-08-27 15:42:21', 1 ),
+('Manejo de Bases de Datos con MySQL', 'Curso práctico para aprender a manejar bases de datos con MySQL.', 'Material exhaustivo sobre administración de bases de datos.', 35, 'foto_mysql.jpg', 4, 89.99, 70, '2024-08-27 15:42:21', 1 );
+
 
 CREATE TABLE IF NOT EXISTS `curso_recursos` (
   `id_curso_recurso` bigint NOT NULL AUTO_INCREMENT,
@@ -143,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `estudiante_curso` (
   KEY `fk_estudiante` (`id_estudiante`),
   KEY `fk_curso` (`id_curso`),
   CONSTRAINT `fk_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_estudiante` FOREIGN KEY (`id_estudiante`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_estudiante` FOREIGN KEY (`id_estudiante`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
 
@@ -154,4 +157,28 @@ INSERT INTO `estudiante_curso` ( `id_estudiante`, `id_curso`, `fecha_registro`, 
 (29, 32, '2024-08-27 16:01:01', 'Efectivo', 'Calle del Pez 89', 29),
 (30, 33, '2024-08-27 16:01:01', 'Tarjeta de Débito', 'Calle Luna 321', 30);
 
+CREATE VIEW `v_usuario_persona` AS 
+select `u`.`id_usuario` AS `id_usuario`,`u`.`nombre_usuario` AS `nombre_usuario`,`u`.`email` AS `email`,`u`.`rol` AS `rol`,concat(`p`.`nombres`,' ',`p`.`paterno`,' ',ifnull(`p`.`materno`,'')) AS `nombres`,`p`.`id_persona` AS `id_persona` from (`persona` `p` join `usuario` `u` on((`p`.`id_persona` = `u`.`id_persona`))) ;
+
  
+
+CREATE VIEW v_curso_listado AS  
+SELECT 
+    c.id_curso, 
+    GROUP_CONCAT(DISTINCT c.titulo SEPARATOR ', ') AS titulos,
+    CONCAT(SUBSTRING(c.descripcion, 1, 15), '...') AS descripcion,
+    MAX(c.duracion) AS duracion,
+    MAX(c.costo) AS costo,
+    COUNT(DISTINCT r.id_curso_recurso) AS recursos
+FROM
+    curso c
+LEFT JOIN 
+    curso_recursos r ON r.id_curso = c.id_curso
+GROUP BY
+    c.id_curso;
+
+
+ CREATE VIEW v_instructor AS 
+SELECT concat(`p`.`nombres`,' ',`p`.`paterno`,' ',ifnull(`p`.`materno`,'')) AS `nombres`,
+p.id_persona,u.rol FROM persona p , usuario u WHERE p.id_persona=u.id_persona 
+and rol='instructor'

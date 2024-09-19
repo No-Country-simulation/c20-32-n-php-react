@@ -42,8 +42,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     break;
  
     case 'PUT':
-        // Extraer el ID de la URL
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        
 
         // Obtener y decodificar los datos de la solicitud PUT
         $putData = json_decode(file_get_contents('php://input'), true);
@@ -52,11 +51,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo '<pre>';
         print_r($putData);
         echo '</pre>';
-        */        
+              */
 
         //echo   "val: ".$putData['nombres'];
 
-        if(is_null($id) || empty(trim($id))){
+        if(is_null($putData['id_persona']) || empty(trim($putData['id_persona']))){
             $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
         }
         else if(!isset($putData['nombres']) || is_null($putData['nombres']) || empty(trim($putData['nombres'])) || strlen($putData['nombres']) > 80){
@@ -68,7 +67,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         else {
      
             $respuesta = $personaModel->updatePersona(
-                $id, 
+                $putData['id_persona'], 
                 $putData['nombres'], 
                 $putData['paterno'], 
                 isset($putData['materno']) ? $putData['materno'] : null, 
@@ -83,44 +82,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($respuesta);
     break;
 
-     
-
-    /*
-    caso de enviar en postaman 
-    Opción 2: Enviar el ID en el cuerpo del JSON
-    Si prefieres mantener el ID en el cuerpo de la solicitud (como se hace con POST y PUT), debes asegurarte de que el ID se esté enviando correctamente en el cuerpo de la solicitud cuando utilices el método DELETE. Aquí te muestro cómo debería lucir tu solicitud en Postman:
-
-    Selecciona el método DELETE.
-    Ve a la pestaña Body.
-    Selecciona la opción raw y luego JSON.
-    Ingresa el siguiente JSON en el cuerpo:
-    json
-    Copiar código
-    {
-        "id": 17
-    }
-    Esta segunda opción no requiere cambios en tu código actual, pero te obliga a enviar el ID como parte del cuerpo de la solicitud.    
-
+      
     case 'DELETE':
         $_DELETE = json_decode(file_get_contents('php://input', true));
-        if(!isset($_DELETE->id) || is_null($_DELETE->id) || empty(trim($_DELETE->id))){
+        //echo "ID ".$_DELETE->id_persona;
+        if(!isset($_DELETE->id_persona) || is_null($_DELETE->id_persona) || empty(trim($_DELETE->id_persona))){
             $respuesta = ['error', 'El ID de la persona no debe estar vacío '];
         }
         else {
-            $respuesta = $personaModel->deletePersona($_DELETE->id);
+            $respuesta = $personaModel->deletePersona($_DELETE->id_persona);
         }
         echo json_encode($respuesta);
     break;
-    */
-    case 'DELETE':
-        // Extraer el ID de la URL
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
-        if(is_null($id) || empty(trim($id))){
-            $respuesta = ['error', 'El ID de la persona no debe estar vacío'];
-        }
-        else {
-            $respuesta = $personaModel->deletePersona($id);
-        }
-        echo json_encode($respuesta);
-    break;    
+    
+     
 }

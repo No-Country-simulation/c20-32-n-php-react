@@ -2,9 +2,11 @@
 
 # Grupo c20-32-n-php-react
 
-# 🌐 Plataforma E-Learning para Cursos Online
+# 🌐 Plataforma E-Learning para Cursos Online **CURSOTEKA**
 
-¡Bienvenido a la **Plataforma E-Learning para Cursos Online**! 🎉 Este es un proyecto innovador desarrollado por el grupo **c20-32-n-php-react**. Nuestra plataforma está diseñada para transformar la manera en que los estudiantes y profesionales acceden a la educación, ofreciendo un entorno de aprendizaje intuitivo, interactivo y accesible para todos. 🚀
+¡Bienvenido a la **Plataforma E-Learning para Cursos Online **! 🎉 Este es un proyecto innovador desarrollado por el grupo **c20-32-n-php-react**. Nuestra plataforma está diseñada para transformar la manera en que los estudiantes y profesionales acceden a la educación, ofreciendo un entorno de aprendizaje intuitivo, interactivo y accesible para todos. 🚀
+
+Puedes visitar la plataforma en línea en  [**Cursoteka**](https://test9-sepia.vercel.app/)
 
 ## ✨ Características clave:
 
@@ -75,4 +77,4 @@ Este proyecto de No Country se enfoca en aprovechar al máximo las habilidades b
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/No-Country-simulation/c20-32-n-php-react.git
+   git clone https://github.com/No-Country-simulation/c20-32-n-php-react.git 

@@ -142,5 +142,9 @@ Crud Curso Recursos:
 
 ![estudiante ](c_c3.png)
 
+APi resful Cursoteka
+
+![estudiante ](c_c7.png)
+
 
 

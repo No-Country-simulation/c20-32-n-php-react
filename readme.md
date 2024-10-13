@@ -78,3 +78,69 @@ Este proyecto de No Country se enfoca en aprovechar al máximo las habilidades b
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/No-Country-simulation/c20-32-n-php-react.git 
+
+Instala
+   npm i react-router-dom 
+
+   npm i axios
+
+   npm install rc-easyui --save
+
+## Imagenes
+
+![principal ](c1.jpeg)
+
+Loguin Estudiante:
+
+![loguin estudiante ](c2.jpeg)
+
+Modulo Estudiante:
+
+![estudiante ](c20.png)
+
+Registro nuevo estudiante
+
+![estudiante ](c3.jpeg)
+
+Ingreso Administradorea
+
+![estudiante ](c21.png)
+
+Menu Administración:
+
+![estudiante ](c4.jpeg)
+
+Crud Personas:
+
+![estudiante ](c5.jpeg)
+
+Crud Usuarios:
+
+![estudiante ](c6.jpeg)
+
+Crud Cursos:
+
+![estudiante ](c_c1.png)
+
+Adicion de Curso:
+
+![estudiante ](c_c2.png)
+
+Modificacion de Curso:
+
+![estudiante ](c_c6.png)
+
+Busqueda de Curso:
+
+![estudiante ](c_c4.png)
+
+Eliminación de Curso:
+
+![estudiante ](c_c5.png)
+
+Crud Curso Recursos:
+
+![estudiante ](c_c3.png)
+
+
+
